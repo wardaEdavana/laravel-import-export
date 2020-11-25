@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GamesController;
+use App\Http\Controllers\ExportController;
 use App\Http\Controllers\categoryTestController;
 /*
 |--------------------------------------------------------------------------
@@ -9,7 +9,7 @@ use App\Http\Controllers\categoryTestController;
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', [CategoryTestController::class,'index']);
-Route::get('/{category_id}', [GamesController::class,'getBreadcrumbsTrail']);
+Route::get('/', [ExportCOntroller::class,'getFileContents']);
+// Route::get('/{category_id}', [GamesController::class,'getBreadcrumbsTrail']);
 
 

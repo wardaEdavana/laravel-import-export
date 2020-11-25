@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGamesTable extends Migration
+class CreateModelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateGamesTable extends Migration
      */
     public function up()
     {
-        Schema::create('games', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->nestedSet();
-            $table->timestamps();
+        Schema::create('models', function (Blueprint $table) {
+            $table->id();
+            $table->string('model_name');
+            $table->unsignedBigInteger('range_id');
+            $table->foreign('range_id')->references('id')->on('ranges');            
         });
     }
 
@@ -28,6 +28,6 @@ class CreateGamesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('games');
+        Schema::dropIfExists('models');
     }
 }

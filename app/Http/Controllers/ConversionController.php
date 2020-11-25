@@ -54,8 +54,7 @@ class ConversionController extends Controller
                 if ($key == 0) {
                     continue;
                 } 
-                if($key == 10) break;
-               
+                              
                // get the make_id
                 $make_id = '';
                 if($csv[1] != ''){
